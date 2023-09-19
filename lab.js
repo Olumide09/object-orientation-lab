@@ -5,8 +5,11 @@
 */
 
 //Code here
-
-
+let me = {
+  name: "Olumide",
+  age: 19,
+}
+console.log(me)
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
 
@@ -17,20 +20,25 @@
 
 //Code here
 
-
+let dog = {
+  name: 'Billy',
+  color: 'blue',
+  age: 5,
+  goodBoy: true,
+}
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
-
+console.log(dog.name)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
-
+console.log(dog['color'])
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
@@ -40,22 +48,31 @@
 */
 
 //Code here
-
-
+let favoriteThings = {
+  band: "Jackson 5",
+  food: "Jollof Rice",
+  person: "My Mum",
+  book: "The Dark Knight Series",
+  movie: "Goal 2",
+  holiday: "Trip to South Africa"
+}
+console.log(favoriteThings)
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
 //Code here
-
-
+favoriteThings.car = "Dodge Challenger"
+console.log(favoriteThings)
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
 //Code here
-
+favoriteThings.food = "Chicken Nuggets"
+favoriteThings.book = "Harry Potter"
+console.log(favoriteThings)
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -73,8 +90,11 @@ var carDetails = {
 */
 
 //Code Here
-
-
+let {color: carColor} = carDetails 
+let {make: carMake} = carDetails
+let {model: carModel} = carDetails
+let {year: manufacturYear} = carDetails
+console.log(carMake)
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -83,15 +103,24 @@ var carDetails = {
   Use object destructuring to save the object properties to new variables. 
   The property names are firstName, lastName, and title.
 */
+let myObj = {
+  firstName: 'Olumide',
+  lastName: 'Olaoye',
+  title: 'Engr',
+}
+
+// let firstName = myObj.firstName
+// let lastName = myObj.lastName
+// let title = myObj.title
+
 
 function greeting( obj ) {
-  //Code Here
-  
+  let {firstName, lastName, title} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-
+console.log(greeting(myObj))
 
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
@@ -105,7 +134,17 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+let myObj2 = {
+  Utah: 1,
+  California: 2,
+  Texas: 3,
+  Arizona: 4,
+}
+function totalPopulation (myObj3) {
+  let {Utah , California, Texas, Arizona} = myObj3
+  return Utah + California + Texas + Arizona;
+}
+console.log(totalPopulation(myObj2))
 
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
@@ -119,9 +158,18 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
-
+let foodobject = {
+  carb: 'Krusty',
+  fat: 'butter',
+  protein: 'crab meat',
+}
+function ingredients (fo) {
+  let {carb, fat, protein} = fo
+  let array = []
+  array.push(carb,fat, protein)
+  return array
+}
+console.log(ingredients(foodobject));
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
 var user = {
@@ -141,7 +189,9 @@ var user = {
 */
 
 //Code Here
-
+user.name = 'Bryan G. Smith';
+user.email = 'bryan.smith@devmounta.in'
+console.log(user)
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -149,7 +199,8 @@ var user = {
 */
 
 //Code Here
-
+delete user.age 
+console.log(user)
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -159,8 +210,15 @@ var user = {
 */
 
 //Code here
-
-
+class Cat {
+  constructor(name,age,color){
+    this.catName = name;
+    this.catage = age;
+    this.catColor = color;
+  }
+}
+let furry = new Cat ('Furry', 3, 'grey')
+console.log(furry.catName)
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -171,6 +229,18 @@ var user = {
 */
 
 //Code here
+class Wizard {
+  constructor (name, age, favouriteSpell) {
+    this.wizardName = name;
+    this.wizardAge = age;
+    this.wizardspell = favouriteSpell
+  }
+  castSpell () {
+    console.log (`${this.wizardName} has cast ${this.wizardspell}`);
+  }
+}
+let Oz = new Wizard ('Oz', 54, 'invisibility');
+Oz.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -196,7 +266,18 @@ var user = {
 */
 
 //Code Here
-
+class Phone {
+  constructor (brand, model, storage, price, soldproperties) {
+    this.phoneBrand = brand;
+    this.phoneModel = model;
+    this.phoneStorage = storage;
+    this.phonePrice = price;
+    this.soldproperties = false;
+  }
+  sell () {
+    
+  }
+}
   
 /*
     Next make three new phone instances using your class.
